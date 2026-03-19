@@ -12,13 +12,30 @@ Download `zomato.csv` and place it in the root of the project folder before runn
 
 This dataset contains restaurant listings from Zomato's Bangalore platform. Before any analysis could be performed, the raw data required significant cleaning — inconsistent rating formats, mixed-type cost columns, duplicate listings, and missing values across key fields. This notebook prepares the dataset for exploratory and business analysis, enabling questions around pricing strategy, cuisine performance, and location-based investment decisions.
 
+## Before & After Summary
+
+| Metric | Before | After |
+|--------|--------|-------|
+| Total rows | 51,717 | 11,193 |
+| Duplicate rows | 29,103 | 0 |
+| Null values | 13,909 | 0 |
+| Columns | 17 | 7 |
+
 ## Objectives
-- Deleting redundant columns
-- Renaming the columns
-- Dropping duplicates
-- Cleaning individual columns
-- Remove the NaN values from the dataset
-- Check for some more Transformations
+The raw Zomato dataset contained several data quality issues that made it 
+unsuitable for analysis in its original form. The goal of this project was 
+to resolve these issues systematically and produce a clean, analysis-ready 
+dataset. Specifically, this involved:
+
+- Removing 10 non-analytical columns (including urls, phone numbers, and 
+  free-text fields) that were outside the scope of the business questions
+- Standardising inconsistent column naming conventions across all 7 retained columns
+- Identifying and eliminating 29,103 duplicate records (56% of the dataset)
+- Resolving 13,909 null values across the Rate, Dish_liked, and Approx_cost columns
+- Cleaning the Rate column which contained irregularly formatted strings 
+  such as "4.1/5" and "3.8 /5" with inconsistent spacing
+- Encoding the Online_order column from Yes/No strings to binary integers 
+  (1/0) to prepare the data for numerical analysis and potential modelling
 
 ## Tools and Libraries
 - Python
@@ -54,10 +71,26 @@ The Rate column contained inconsistently formatted strings such as "4.1/5" and "
 ![](images/Step6.png)
 ###  Encoding the Online_order Column
 
-Converted the Online_order column from Yes/No string values to binary integers (1 = Yes, 0 = No) using a lambda function, making the column ready for numerical analysis and potential modelling.
+Converted the Online_order column from Yes/No string values to binary integers (1 = Yes, 0 = No) using a map function, making the column ready for numerical analysis and potential modelling.
 ![](images/Step7.png)
 ### Exporting the Cleaned Dataset
 
 Exported the final cleaned dataset to CSV using index=False to avoid writing the DataFrame index as an unwanted column — an important detail that was identified and corrected during the process.
 
 ![](images/Step8.png)
+
+## Next Steps
+Now that the dataset has been cleaned and prepared, it enables the following 
+analytical work:
+
+- **Rating Analysis** — Explore correlations between restaurant ratings, 
+  pricing, and online ordering availability to identify what drives higher 
+  customer scores
+- **Pricing Segmentation** — Group restaurants by approximate cost for two 
+  people to understand how price bands relate to customer satisfaction and 
+  votes
+- **Online Ordering Impact** — Analyse whether restaurants offering online 
+  ordering consistently outperform those that don't in terms of ratings and 
+  engagement
+- **Dashboard Development** — Load the cleaned dataset into Power BI to 
+  build an interactive dashboard surfacing key restaurant performance insights
