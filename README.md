@@ -1,6 +1,13 @@
 # Restaurant-Dataset-Cleaning-with-Python-Pandas
 Cleaning and Preparing a Restaurant Dataset (Zomato) with Python/Pandas
 
+## Dataset
+The raw dataset used in this project is the Zomato Bangalore Restaurants dataset, 
+available on Kaggle:
+https://www.kaggle.com/datasets/rishikeshkonapure/zomato/data
+
+Download `zomato.csv` and place it in the root of the project folder before running the notebook.
+
 ## Project Overview
 
 This dataset contains restaurant listings from Zomato's Bangalore platform. Before any analysis could be performed, the raw data required significant cleaning — inconsistent rating formats, mixed-type cost columns, duplicate listings, and missing values across key fields. This notebook prepares the dataset for exploratory and business analysis, enabling questions around pricing strategy, cuisine performance, and location-based investment decisions.
