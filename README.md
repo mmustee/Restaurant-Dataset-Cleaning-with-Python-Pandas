@@ -29,6 +29,7 @@ This dataset contains restaurant listings from Zomato's Bangalore platform. Befo
 ### Initial Exploration
 
 Loaded the raw dataset (51,717 rows, 17 columns) and inspected data types, null counts, and column structure using data.info() and data.shape to understand the scope of cleaning required before making any changes.
+
 ![](Restaurant-Dataset-Cleaning-with-Python-Pandas/images/Step1a.png)
 ### Removing Redundant Columns
 
