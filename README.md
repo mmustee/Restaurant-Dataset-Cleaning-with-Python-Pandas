@@ -50,10 +50,10 @@ Loaded the raw dataset (51,717 rows, 17 columns) and inspected data types, null 
 ![](images/Step1a.png)
 ### Removing Redundant Columns
 
-url, address, phone, location, rest_type, cuisines, reviews_list, menu_item, listed_in(type), listed_in(city)) that were either non-analytical, free-text fields unsuitable for structured analysis, or outside the scope of the business questions being answered. Retained 7 columns focused on restaurant identity, ordering features, ratings, and cost.
+Dropped url, address, phone, location, rest_type, cuisines, reviews_list, menu_item, listed_in(type), listed_in(city)) that were either non-analytical, free-text fields unsuitable for structured analysis, or outside the scope of the business questions being answered. Retained 7 columns focused on restaurant identity, ordering features, ratings, and cost.
 ![](images/Step2a.png)
 ![](images/Step2b.png)
-### Standardizing Column Names
+### Standardising Column Names
 
 Renamed all columns using a capitalisation loop to ensure consistent, readable naming conventions across the dataset, replacing the original inconsistent mix of lowercase and snake_case labels.
 ![](images/Step3.png)
